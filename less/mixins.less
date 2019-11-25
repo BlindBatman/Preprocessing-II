@@ -1,1 +1,19 @@
 // Mixins in here
+.btn-mixin(@brd-rad,@bx-color,@font,@bx-mx-width,@font-color,@vert-pad) {
+  background: @bx-color;
+  border-radius: @brd-rad;
+  color: @font-color;
+  font-size: @font;
+  max-width: @bx-mx-width;
+  padding: @vert-pad 0;
+  text-align: center;
+}
+
+.btn {
+  .btn-mixin(20px, #008080, 20px, 210px, white, 15px);
+}
+@media @mobile {
+  .btn {
+    .btn-mixin(20px, #008080, 20px, 98%, white, 15px);
+  }
+}
